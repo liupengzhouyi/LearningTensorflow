@@ -23,7 +23,8 @@ def linear_regression(x):
 def mean_square(y_pred, y_true):
     return tensorflow.reduce_sum(tensorflow.pow(y_pred-y_true,2)) / (2*n_samples)
 
-optimazer = tensorflow.optimizers.SGD(0.02)
+# 优化器
+optimazer = tensorflow.optimizers.Adam(0.02)
 
 def run_optimazation():
     with tensorflow.GradientTape() as g:
